@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { PageView } from '../types';
 import { BRAND } from '../data/content';
-import { Menu, X, ArrowUpRight, Phone, MessageCircle } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Phone, MessageCircle, Search } from 'lucide-react';
 
 interface NavbarProps {
   currentPage: PageView;
   onNavigate: (page: PageView) => void;
   onOpenConsultation: () => void;
+  onOpenSearch: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   currentPage,
   onNavigate,
   onOpenConsultation,
+  onOpenSearch,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -74,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Desktop Navigation Links */}
           <nav
             id="desktop-nav-menu"
-            className="hidden lg:flex items-center space-x-7 xl:space-x-9"
+            className="hidden lg:flex items-center space-x-6 xl:space-x-8"
             aria-label="Main Navigation"
           >
             {navItems.map((item) => {
@@ -99,8 +101,18 @@ export const Navbar: React.FC<NavbarProps> = ({
             })}
           </nav>
 
-          {/* Right Action CTA */}
-          <div className="hidden sm:flex items-center space-x-4">
+          {/* Right Action CTA & Search Button */}
+          <div className="hidden sm:flex items-center space-x-3">
+            <button
+              id="nav-search-btn"
+              onClick={onOpenSearch}
+              className="p-2.5 text-[#9C9488] hover:text-[#FAF8F5] hover:bg-[#1E1D1B] border border-transparent hover:border-[#2D2B28] transition-colors"
+              aria-label="Search Atelier directory and projects"
+              title="Search"
+            >
+              <Search size={16} />
+            </button>
+
             <button
               id="nav-book-consultation-btn"
               onClick={onOpenConsultation}
@@ -110,8 +122,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Mobile Menu Trigger */}
-          <div className="flex items-center space-x-3 lg:hidden">
+          {/* Mobile Menu Trigger & Mobile Search */}
+          <div className="flex items-center space-x-2 lg:hidden">
+            <button
+              id="mobile-nav-search-btn"
+              onClick={onOpenSearch}
+              className="p-2 text-[#9C9488] hover:text-[#FAF8F5]"
+              aria-label="Search atelier"
+            >
+              <Search size={20} />
+            </button>
+
             <button
               id="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -132,10 +153,20 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="fixed inset-0 z-40 bg-[#121212]/98 backdrop-blur-xl pt-24 px-6 pb-8 flex flex-col justify-between overflow-y-auto lg:hidden"
         >
           <div className="space-y-6 pt-4">
-            <div className="border-b border-[#282624] pb-4">
+            <div className="border-b border-[#282624] pb-4 flex items-center justify-between">
               <span className="text-xs uppercase tracking-[0.25em] text-[#C5A880]">
                 Navigation
               </span>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenSearch();
+                }}
+                className="flex items-center space-x-1.5 text-xs text-[#9C9488] hover:text-[#FAF8F5]"
+              >
+                <Search size={13} />
+                <span>Search</span>
+              </button>
             </div>
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
@@ -153,7 +184,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               ))}
             </div>
 
-            <div className="pt-4">
+            <div className="pt-4 space-y-2">
               <button
                 id="mobile-drawer-consultation-btn"
                 onClick={() => {

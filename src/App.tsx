@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { PageView, ProjectDetail } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -18,21 +18,89 @@ import { ProjectsView } from './components/ProjectsView';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { ConsultationModal } from './components/ConsultationModal';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { SearchModal } from './components/SearchModal';
+
+const VALID_PAGES: PageView[] = ['home', 'about', 'services', 'projects', 'process', 'testimonials', 'contact'];
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageView>('home');
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [presetService, setPresetService] = useState<string>('');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [servicesInitialQuery, setServicesInitialQuery] = useState<string>('');
+
+  // Synchronize with URL hash and search params on load & hashchange
+  const syncWithUrl = useCallback(() => {
+    try {
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      const params = new URLSearchParams(window.location.search);
+      const querySearch = params.get('q') || params.get('search');
+      const pageParam = params.get('page')?.toLowerCase() as PageView | undefined;
+
+      if (querySearch) {
+        setServicesInitialQuery(querySearch);
+        setCurrentPage('services');
+        return;
+      }
+
+      if (pageParam && VALID_PAGES.includes(pageParam)) {
+        setCurrentPage(pageParam);
+        return;
+      }
+
+      if (hash && VALID_PAGES.includes(hash as PageView)) {
+        setCurrentPage(hash as PageView);
+      }
+    } catch {
+      // Fallback cleanly to home
+      setCurrentPage('home');
+    }
+  }, []);
+
+  useEffect(() => {
+    syncWithUrl();
+    window.addEventListener('hashchange', syncWithUrl);
+    window.addEventListener('popstate', syncWithUrl);
+    return () => {
+      window.removeEventListener('hashchange', syncWithUrl);
+      window.removeEventListener('popstate', syncWithUrl);
+    };
+  }, [syncWithUrl]);
+
+  // Global keyboard shortcut: Ctrl+K or Cmd+K to open Search
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsSearchOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const handleNavigate = (page: PageView) => {
     setCurrentPage(page);
+    try {
+      if (page === 'home') {
+        history.pushState(null, '', window.location.pathname);
+      } else {
+        window.location.hash = page;
+      }
+    } catch {
+      // safe fallback
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleOpenConsultation = (service = '') => {
     setPresetService(service);
     setIsConsultationOpen(true);
+  };
+
+  const handleOpenSearch = () => {
+    setIsSearchOpen(true);
   };
 
   const handleScrollDownFromHero = () => {
@@ -49,6 +117,7 @@ export default function App() {
         currentPage={currentPage}
         onNavigate={handleNavigate}
         onOpenConsultation={() => handleOpenConsultation()}
+        onOpenSearch={handleOpenSearch}
       />
 
       {/* Main Content Area Based on Current View */}
@@ -110,6 +179,7 @@ export default function App() {
 
         {currentPage === 'services' && (
           <ServicesView
+            initialSearchQuery={servicesInitialQuery}
             onSelectServiceForConsultation={(serviceName) =>
               handleOpenConsultation(serviceName)
             }
@@ -149,6 +219,19 @@ export default function App() {
 
       {/* Minimal Luxury Footer */}
       <Footer onNavigate={handleNavigate} />
+
+      {/* Global Atelier Search Modal */}
+      <SearchModal
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        onNavigate={handleNavigate}
+        onSelectProject={(project) => {
+          setSelectedProject(project);
+        }}
+        onSelectService={(serviceName) => {
+          handleOpenConsultation(serviceName);
+        }}
+      />
 
       {/* Reusable Project Detail Template Modal */}
       <ProjectDetailModal
