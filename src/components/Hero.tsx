@@ -36,9 +36,9 @@ export const Hero: React.FC<HeroProps> = ({
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center pt-24 pb-20 flex flex-col items-center">
         {/* Subtle Brand Tag */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0.8, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
+          transition={{ duration: 0.5 }}
           className="inline-flex items-center space-x-3 mb-6"
         >
           <span className="w-8 h-[1px] bg-[#C5A880]/70" />
@@ -50,9 +50,9 @@ export const Hero: React.FC<HeroProps> = ({
 
         {/* Large Editorial Headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0.9, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
+          transition={{ duration: 0.6 }}
           className="font-editorial text-5xl sm:text-7xl lg:text-8xl tracking-tight text-[#FAF8F5] leading-[1.08] max-w-4xl"
         >
           {BRAND.headline}
@@ -60,9 +60,9 @@ export const Hero: React.FC<HeroProps> = ({
 
         {/* Supporting Text */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0.9, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="mt-6 sm:mt-8 text-base sm:text-xl text-[#D8D2C7] font-light max-w-2xl leading-relaxed"
         >
           {BRAND.supportingHeroText}
@@ -70,9 +70,9 @@ export const Hero: React.FC<HeroProps> = ({
 
         {/* Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0.9, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto"
         >
           <button
@@ -98,15 +98,13 @@ export const Hero: React.FC<HeroProps> = ({
       <button
         id="hero-scroll-indicator"
         onClick={onScrollDown}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center space-y-2 text-[#9C9488] hover:text-[#FAF8F5] transition-colors focus:outline-none group"
-        aria-label="Scroll to discover OMONY Atelier Studios"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center space-y-2 text-[#9C9488] hover:text-[#FAF8F5] transition-colors group cursor-pointer focus:outline-none"
+        aria-label="Scroll down to explore OMONY Atelier Studios"
       >
-        <span className="text-[10px] uppercase tracking-[0.3em] font-medium group-hover:text-[#C5A880] transition-colors">
-          DISCOVER
+        <span className="text-[10px] uppercase tracking-[0.3em] font-light group-hover:tracking-[0.35em] transition-all">
+          EXPLORE
         </span>
-        <div className="w-[1px] h-8 bg-[#9C9488]/40 group-hover:bg-[#C5A880] transition-colors relative overflow-hidden">
-          <div className="w-full h-3 bg-[#C5A880] animate-pulse" />
-        </div>
+        <ArrowDown size={16} className="animate-bounce text-[#C5A880]" />
       </button>
     </section>
   );
