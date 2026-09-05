@@ -74,7 +74,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
               <div className="relative aspect-[4/3] overflow-hidden bg-[#181716] border border-[#282624]">
                 <img
                   src={project.coverImage}
-                  alt={project.placeholderType}
+                  alt={project.title}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   loading="lazy"
                 />

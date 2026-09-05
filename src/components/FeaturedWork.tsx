@@ -53,7 +53,7 @@ export const FeaturedWork: React.FC<FeaturedWorkProps> = ({
             <div className="relative aspect-[16/11] overflow-hidden bg-[#181716] border border-[#262422]">
               <img
                 src={featured[0].coverImage}
-                alt={featured[0].placeholderType}
+                alt={featured[0].title}
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
               />
@@ -97,7 +97,7 @@ export const FeaturedWork: React.FC<FeaturedWorkProps> = ({
             <div className="relative aspect-[4/5] overflow-hidden bg-[#181716] border border-[#262422]">
               <img
                 src={featured[1].coverImage}
-                alt={featured[1].placeholderType}
+                alt={featured[1].title}
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
               />
@@ -141,7 +141,7 @@ export const FeaturedWork: React.FC<FeaturedWorkProps> = ({
             <div className="relative aspect-[4/3] overflow-hidden bg-[#181716] border border-[#262422]">
               <img
                 src={featured[2].coverImage}
-                alt={featured[2].placeholderType}
+                alt={featured[2].title}
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
               />
@@ -185,7 +185,7 @@ export const FeaturedWork: React.FC<FeaturedWorkProps> = ({
             <div className="relative aspect-[16/10] overflow-hidden bg-[#181716] border border-[#262422]">
               <img
                 src={featured[3].coverImage}
-                alt={featured[3].placeholderType}
+                alt={featured[3].title}
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
               />

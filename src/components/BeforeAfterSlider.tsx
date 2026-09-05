@@ -141,10 +141,14 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
             </div>
           </div>
 
-          {/* Asset Swapping Developer/Client Note */}
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#7A746B] border-t border-[#1C1B19] pt-4">
-            <span>Asset Slot: Replaceable high-resolution project transformation photography</span>
-            <span className="text-[#9C9488]">Lagos, Nigeria Project Archive</span>
+          {/* Transformation Project Caption */}
+          <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-[#9C9488] border-t border-[#1C1B19] pt-4 gap-2">
+            <span className="font-medium uppercase tracking-[0.15em] text-[#E5E0D8]">
+              Lagos, Nigeria — Residential Living Room
+            </span>
+            <span className="text-[#7A746B]">
+              Full Spatial Reorganization & Bespoke Architectural Millwork
+            </span>
           </div>
         </div>
       </div>

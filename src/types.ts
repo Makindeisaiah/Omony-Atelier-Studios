@@ -6,7 +6,7 @@ export interface ProjectDetail {
   id: string;
   title: string;
   category: 'RESIDENTIAL' | 'COMMERCIAL' | 'HOSPITALITY' | 'RENOVATION';
-  placeholderType: 'RESIDENTIAL INTERIOR' | 'COMMERCIAL INTERIOR' | 'INTERIOR TRANSFORMATION';
+  projectType: 'RESIDENTIAL INTERIOR' | 'COMMERCIAL INTERIOR' | 'INTERIOR TRANSFORMATION';
   location: string;
   year: string;
   coverImage: string;

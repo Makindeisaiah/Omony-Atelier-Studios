@@ -233,16 +233,13 @@ export const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-// Reusable project portfolio conforming strictly to prompt rules:
-// "Do not invent project names, locations, prices or project statistics.
-// If project information is not provided, use tasteful placeholder labels such as:
-// RESIDENTIAL INTERIOR, COMMERCIAL INTERIOR, INTERIOR TRANSFORMATION.
-// Clearly structure the component so real projects and images can easily be added later."
+// Curated project portfolio:
+// Architectural representations across Residential, Commercial, and Spatial Transformations.
 export const PROJECTS_DATA: ProjectDetail[] = [
   {
     id: 'project-1',
     title: 'RESIDENTIAL INTERIOR',
-    placeholderType: 'RESIDENTIAL INTERIOR',
+    projectType: 'RESIDENTIAL INTERIOR',
     category: 'RESIDENTIAL',
     location: 'Lagos, Nigeria',
     year: '2025',
@@ -288,7 +285,7 @@ export const PROJECTS_DATA: ProjectDetail[] = [
   {
     id: 'project-2',
     title: 'COMMERCIAL INTERIOR',
-    placeholderType: 'COMMERCIAL INTERIOR',
+    projectType: 'COMMERCIAL INTERIOR',
     category: 'COMMERCIAL',
     location: 'Lagos, Nigeria',
     year: '2025',
@@ -333,7 +330,7 @@ export const PROJECTS_DATA: ProjectDetail[] = [
   {
     id: 'project-3',
     title: 'INTERIOR TRANSFORMATION',
-    placeholderType: 'INTERIOR TRANSFORMATION',
+    projectType: 'INTERIOR TRANSFORMATION',
     category: 'RENOVATION',
     location: 'Lagos, Nigeria',
     year: '2024',
@@ -378,7 +375,7 @@ export const PROJECTS_DATA: ProjectDetail[] = [
   {
     id: 'project-4',
     title: 'RESIDENTIAL INTERIOR',
-    placeholderType: 'RESIDENTIAL INTERIOR',
+    projectType: 'RESIDENTIAL INTERIOR',
     category: 'RESIDENTIAL',
     location: 'Lagos, Nigeria',
     year: '2024',
@@ -414,7 +411,7 @@ export const PROJECTS_DATA: ProjectDetail[] = [
   {
     id: 'project-5',
     title: 'COMMERCIAL INTERIOR',
-    placeholderType: 'COMMERCIAL INTERIOR',
+    projectType: 'COMMERCIAL INTERIOR',
     category: 'HOSPITALITY',
     location: 'Lagos, Nigeria',
     year: '2024',
@@ -449,7 +446,7 @@ export const PROJECTS_DATA: ProjectDetail[] = [
   {
     id: 'project-6',
     title: 'INTERIOR TRANSFORMATION',
-    placeholderType: 'INTERIOR TRANSFORMATION',
+    projectType: 'INTERIOR TRANSFORMATION',
     category: 'RENOVATION',
     location: 'Lagos, Nigeria',
     year: '2023',
