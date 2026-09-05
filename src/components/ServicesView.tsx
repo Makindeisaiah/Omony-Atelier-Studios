@@ -29,23 +29,23 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
   }, 0);
 
   return (
-    <div id="services-page-view" className="pt-28 pb-24 bg-[#121212] text-[#EFECE6]">
+    <div id="services-page-view" className="pt-24 sm:pt-28 pb-20 sm:pb-24 bg-[#121212] text-[#EFECE6]">
       {/* Header */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 pt-8 pb-16 border-b border-[#23211F]">
-        <span className="text-xs uppercase tracking-[0.35em] text-[#C5A880] font-semibold block mb-4">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-12 sm:pb-16 border-b border-[#23211F]">
+        <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-[#C5A880] font-semibold block mb-3 sm:mb-4">
           OMONY ATELIER STUDIOS • SERVICE DIRECTORY
         </span>
-        <h1 className="font-editorial text-5xl sm:text-7xl lg:text-8xl text-[#FAF8F5] leading-[1.08] max-w-4xl">
+        <h1 className="font-editorial text-3xl sm:text-6xl lg:text-8xl text-[#FAF8F5] leading-[1.1] max-w-4xl break-words">
           Comprehensive Interior Disciplines.
         </h1>
-        <p className="mt-6 text-lg sm:text-xl text-[#C5BFB5] font-light max-w-2xl leading-relaxed">
+        <p className="mt-6 text-base sm:text-xl text-[#C5BFB5] font-light max-w-2xl leading-relaxed">
           From architectural space planning and residential renovations to bespoke commercial environments and meticulous finishing supervision in Lagos, Nigeria.
         </p>
       </section>
 
       {/* Filter & Search Bar */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 py-8 border-b border-[#201E1C]">
-        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 border-b border-[#201E1C]">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 sm:gap-6">
           {/* Category Tabs */}
           <div className="flex items-center space-x-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
             <button
@@ -76,7 +76,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
           </div>
 
           {/* Search Input */}
-          <div className="relative min-w-[280px]">
+          <div className="relative w-full md:w-72">
             <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#7A746B]" />
             <input
               id="services-search-input"

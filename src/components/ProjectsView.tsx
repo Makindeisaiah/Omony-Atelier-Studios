@@ -28,21 +28,21 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
   });
 
   return (
-    <div id="projects-page-view" className="pt-28 pb-24 bg-[#121212] text-[#EFECE6]">
+    <div id="projects-page-view" className="pt-24 sm:pt-28 pb-20 sm:pb-24 bg-[#121212] text-[#EFECE6]">
       {/* Header */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 pt-8 pb-14 border-b border-[#23211F]">
-        <span className="text-xs uppercase tracking-[0.35em] text-[#C5A880] font-semibold block mb-4">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-12 sm:pb-14 border-b border-[#23211F]">
+        <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-[#C5A880] font-semibold block mb-3 sm:mb-4">
           OMONY ATELIER STUDIOS • SELECTED WORKS
         </span>
-        <h1 className="font-editorial text-5xl sm:text-7xl lg:text-8xl text-[#FAF8F5] leading-[1.08] max-w-4xl">
+        <h1 className="font-editorial text-3xl sm:text-6xl lg:text-8xl text-[#FAF8F5] leading-[1.1] max-w-4xl break-words">
           Where Architecture Meets Living.
         </h1>
-        <p className="mt-6 text-lg sm:text-xl text-[#C5BFB5] font-light max-w-2xl leading-relaxed">
+        <p className="mt-6 text-base sm:text-xl text-[#C5BFB5] font-light max-w-2xl leading-relaxed">
           A visual archive of bespoke residential and commercial spaces shaped by proportion, enduring materials, and meticulous execution in Lagos, Nigeria.
         </p>
 
         {/* Categories Bar */}
-        <div className="flex items-center space-x-2 sm:space-x-4 overflow-x-auto pt-10 scrollbar-none">
+        <div className="flex items-center space-x-2 sm:space-x-4 overflow-x-auto pt-8 sm:pt-10 scrollbar-none">
           {categories.map((cat) => (
             <button
               key={cat}

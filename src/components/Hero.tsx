@@ -33,19 +33,19 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center pt-24 pb-20 flex flex-col items-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-20 flex flex-col items-center">
         {/* Subtle Brand Tag */}
         <motion.div
           initial={{ opacity: 0.8, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center space-x-3 mb-6"
+          className="inline-flex items-center justify-center space-x-2 sm:space-x-3 mb-6 max-w-full px-2"
         >
-          <span className="w-8 h-[1px] bg-[#C5A880]/70" />
-          <span className="text-[11px] sm:text-xs uppercase tracking-[0.35em] text-[#E6E1D8] font-medium">
+          <span className="hidden sm:block w-8 h-[1px] bg-[#C5A880]/70 shrink-0" />
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-[#E6E1D8] font-medium text-center">
             LAGOS, NIGERIA • BESPOKE ARCHITECTURE & INTERIORS
           </span>
-          <span className="w-8 h-[1px] bg-[#C5A880]/70" />
+          <span className="hidden sm:block w-8 h-[1px] bg-[#C5A880]/70 shrink-0" />
         </motion.div>
 
         {/* Large Editorial Headline */}
@@ -53,7 +53,7 @@ export const Hero: React.FC<HeroProps> = ({
           initial={{ opacity: 0.9, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-editorial text-5xl sm:text-7xl lg:text-8xl tracking-tight text-[#FAF8F5] leading-[1.08] max-w-4xl"
+          className="font-editorial text-4xl sm:text-7xl lg:text-8xl tracking-tight text-[#FAF8F5] leading-[1.08] max-w-4xl break-words"
         >
           {BRAND.headline}
         </motion.h1>

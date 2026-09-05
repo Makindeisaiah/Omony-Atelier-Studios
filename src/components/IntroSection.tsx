@@ -8,8 +8,8 @@ interface IntroSectionProps {
 
 export const IntroSection: React.FC<IntroSectionProps> = ({ onDiscover }) => {
   return (
-    <section id="intro-section" className="py-24 lg:py-32 bg-[#121212] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section id="intro-section" className="py-20 lg:py-32 bg-[#121212] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Editorial Text Content */}
           <div className="lg:col-span-6 space-y-8 order-2 lg:order-1">
@@ -17,7 +17,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onDiscover }) => {
               <span className="text-xs uppercase tracking-[0.35em] text-[#C5A880] font-semibold block">
                 OMONY ATELIER STUDIOS
               </span>
-              <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-[#FAF8F5] leading-[1.12]">
+              <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-[#FAF8F5] leading-[1.12] break-words">
                 Spaces designed around the way you live.
               </h2>
             </div>
@@ -32,7 +32,7 @@ export const IntroSection: React.FC<IntroSectionProps> = ({ onDiscover }) => {
             </div>
 
             {/* Core Values / Known For Badges */}
-            <div className="grid grid-cols-2 gap-3 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               {['Refined Aesthetic', 'Meticulous Execution', 'Bespoke Residential', 'Bespoke Commercial'].map((item) => (
                 <div key={item} className="flex items-center space-x-2 text-xs uppercase tracking-wider text-[#FAF8F5]/90">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880]" />

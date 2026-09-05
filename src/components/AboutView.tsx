@@ -12,22 +12,22 @@ export const AboutView: React.FC<AboutViewProps> = ({
   onExploreProjects,
 }) => {
   return (
-    <div id="about-page-view" className="pt-28 pb-24 bg-[#121212] text-[#EFECE6]">
+    <div id="about-page-view" className="pt-24 sm:pt-28 pb-20 sm:pb-24 bg-[#121212] text-[#EFECE6]">
       {/* Editorial Header */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 pt-8 pb-16 lg:pb-24 border-b border-[#23211F]">
-        <span className="text-xs uppercase tracking-[0.35em] text-[#C5A880] font-semibold block mb-4">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-12 sm:pb-16 lg:pb-24 border-b border-[#23211F]">
+        <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-[#C5A880] font-semibold block mb-3 sm:mb-4">
           OMONY ATELIER STUDIOS • ABOUT
         </span>
-        <h1 className="font-editorial text-5xl sm:text-7xl lg:text-8xl text-[#FAF8F5] leading-[1.08] max-w-4xl">
+        <h1 className="font-editorial text-3xl sm:text-6xl lg:text-8xl text-[#FAF8F5] leading-[1.1] max-w-4xl break-words">
           Designing Spaces With Purpose.
         </h1>
-        <p className="mt-8 text-lg sm:text-2xl text-[#C5BFB5] font-light max-w-3xl leading-relaxed">
+        <p className="mt-6 sm:mt-8 text-base sm:text-2xl text-[#C5BFB5] font-light max-w-3xl leading-relaxed">
           OMONY Atelier Studios is a luxury interior architecture and design studio based in Lagos, Nigeria.
         </p>
       </section>
 
       {/* Narrative Split Section */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 py-20 lg:py-28">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-6 space-y-6 text-[#9C9488] text-base sm:text-lg font-light leading-relaxed">
             <h2 className="font-editorial text-3xl sm:text-4xl text-[#FAF8F5] leading-snug">

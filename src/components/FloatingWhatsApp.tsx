@@ -6,10 +6,10 @@ export const FloatingWhatsApp: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div id="floating-whatsapp-widget" className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+    <div id="floating-whatsapp-widget" className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end max-w-[calc(100vw-2rem)]">
       {/* Tooltip / Prompt bubble */}
       {isOpen && (
-        <div className="mb-3 w-72 bg-[#181716] border border-[#2D2B28] p-4 shadow-2xl animate-in fade-in slide-in-from-bottom-2 duration-200">
+        <div className="mb-3 w-72 max-w-[calc(100vw-2.5rem)] bg-[#181716] border border-[#2D2B28] p-4 shadow-2xl animate-in fade-in slide-in-from-bottom-2 duration-200">
           <div className="flex items-start justify-between border-b border-[#262422] pb-2 mb-2">
             <div>
               <span className="text-[10px] tracking-[0.25em] uppercase text-[#C5A880] font-semibold block">

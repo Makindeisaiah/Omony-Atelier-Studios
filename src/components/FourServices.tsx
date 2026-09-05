@@ -14,18 +14,18 @@ export const FourServices: React.FC<FourServicesProps> = ({
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="services-highlight" className="py-24 lg:py-32 bg-[#0E0E0D] border-t border-[#1F1D1B] relative">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section id="services-highlight" className="py-20 lg:py-32 bg-[#0E0E0D] border-t border-[#1F1D1B] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 lg:mb-20 pb-8 border-b border-[#242220]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-20 pb-8 border-b border-[#242220]">
           <div className="space-y-3">
             <span className="text-xs uppercase tracking-[0.35em] text-[#C5A880] font-semibold block">
               EXPERTISE &amp; DISCIPLINES
             </span>
-            <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-[#FAF8F5]">
+            <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-[#FAF8F5] leading-tight break-words">
               Our Expertise
             </h2>
-            <p className="text-[#9C9488] text-base sm:text-lg font-light max-w-xl">
+            <p className="text-[#9C9488] text-sm sm:text-lg font-light max-w-xl leading-relaxed">
               From concept to completion, every detail is considered.
             </p>
           </div>
@@ -33,7 +33,7 @@ export const FourServices: React.FC<FourServicesProps> = ({
           <button
             id="view-all-services-header-btn"
             onClick={onExploreAllServices}
-            className="mt-6 md:mt-0 inline-flex items-center space-x-2 text-xs tracking-[0.2em] uppercase font-semibold text-[#C5A880] hover:text-[#FAF8F5] transition-colors"
+            className="mt-6 md:mt-0 self-start md:self-auto inline-flex items-center space-x-2 text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase font-semibold text-[#C5A880] hover:text-[#FAF8F5] transition-colors"
           >
             <span>FULL DIRECTORY (39 SERVICES)</span>
             <ArrowUpRight size={16} />
@@ -52,7 +52,7 @@ export const FourServices: React.FC<FourServicesProps> = ({
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => onSelectService(item.title)}
-                className="group relative cursor-pointer bg-[#141312] border border-[#262422] p-8 flex flex-col justify-between min-h-[380px] transition-all duration-500 hover:border-[#C5A880]/60 hover:bg-[#181715]"
+                className="group relative cursor-pointer bg-[#141312] border border-[#262422] p-6 sm:p-8 flex flex-col justify-between min-h-[340px] sm:min-h-[380px] transition-all duration-500 hover:border-[#C5A880]/60 hover:bg-[#181715]"
               >
                 {/* Subtle background ambient image on hover */}
                 <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none">

@@ -2,8 +2,8 @@ import React from 'react';
 
 export const DesignApproach: React.FC = () => {
   return (
-    <section id="design-approach-section" className="py-24 lg:py-32 bg-[#0E0E0D] border-y border-[#211F1D] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section id="design-approach-section" className="py-20 lg:py-32 bg-[#0E0E0D] border-y border-[#211F1D] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Architectural Image with Tactile Material Insets */}
           <div className="lg:col-span-6 space-y-4">
@@ -36,12 +36,12 @@ export const DesignApproach: React.FC = () => {
               <span className="text-xs uppercase tracking-[0.35em] text-[#C5A880] font-semibold block">
                 ATELIER PHILOSOPHY
               </span>
-              <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-[#FAF8F5] leading-[1.12]">
+              <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-[#FAF8F5] leading-[1.12] break-words">
                 Designed With Intention.
               </h2>
             </div>
 
-            <blockquote className="font-editorial text-2xl sm:text-3xl text-[#E6E1D8] italic leading-relaxed font-light border-l-2 border-[#C5A880] pl-6 py-2">
+            <blockquote className="font-editorial text-xl sm:text-2xl lg:text-3xl text-[#E6E1D8] italic leading-relaxed font-light border-l-2 border-[#C5A880] pl-4 sm:pl-6 py-2">
               &ldquo;We believe exceptional interiors should balance beauty with purpose. Every material, proportion, finish and detail is considered to create spaces that are both refined and enduring.&rdquo;
             </blockquote>
 

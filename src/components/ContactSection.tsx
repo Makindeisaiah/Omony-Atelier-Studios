@@ -42,8 +42,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   };
 
   return (
-    <section id="contact-section" className="py-24 lg:py-32 bg-[#121212] relative">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section id="contact-section" className="py-20 lg:py-32 bg-[#121212] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Column: Contact Channels & Studio Address */}
           <div className="lg:col-span-5 space-y-8">
@@ -51,51 +51,51 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               <span className="text-xs uppercase tracking-[0.35em] text-[#C5A880] font-semibold block">
                 ATELIER ENGAGEMENT
               </span>
-              <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-[#FAF8F5] leading-[1.12]">
+              <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-[#FAF8F5] leading-[1.12] break-words">
                 Let's Create Something Exceptional.
               </h2>
-              <p className="text-[#9C9488] text-base sm:text-lg font-light leading-relaxed">
+              <p className="text-[#9C9488] text-sm sm:text-lg font-light leading-relaxed">
                 Tell us about your space, your vision and what you would like to create. Our team will be happy to discuss your project.
               </p>
             </div>
 
             {/* Direct Quick Action Buttons */}
-            <div className="grid grid-cols-2 gap-3 pt-2">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3 pt-2">
               <a
                 id="contact-whatsapp-btn"
                 href={generateWhatsAppMessage()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 bg-[#181716] border border-[#2D2B28] hover:border-[#C5A880] text-[#FAF8F5] transition-colors flex items-center space-x-3 group"
+                className="p-3 sm:p-4 bg-[#181716] border border-[#2D2B28] hover:border-[#C5A880] text-[#FAF8F5] transition-colors flex items-center space-x-2.5 sm:space-x-3 group min-w-0"
               >
                 <MessageCircle size={18} className="text-[#C5A880] shrink-0" />
-                <div className="text-left">
-                  <span className="text-[10px] tracking-wider uppercase text-[#7A746B] block">Direct</span>
-                  <span className="text-xs font-semibold tracking-wider uppercase group-hover:text-[#C5A880]">WHATSAPP</span>
+                <div className="text-left min-w-0">
+                  <span className="text-[9px] sm:text-[10px] tracking-wider uppercase text-[#7A746B] block">Direct</span>
+                  <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase group-hover:text-[#C5A880] truncate block">WHATSAPP</span>
                 </div>
               </a>
 
               <a
                 id="contact-call-btn"
                 href={`tel:${BRAND.phones[0].raw}`}
-                className="p-4 bg-[#181716] border border-[#2D2B28] hover:border-[#C5A880] text-[#FAF8F5] transition-colors flex items-center space-x-3 group"
+                className="p-3 sm:p-4 bg-[#181716] border border-[#2D2B28] hover:border-[#C5A880] text-[#FAF8F5] transition-colors flex items-center space-x-2.5 sm:space-x-3 group min-w-0"
               >
                 <Phone size={18} className="text-[#C5A880] shrink-0" />
-                <div className="text-left">
-                  <span className="text-[10px] tracking-wider uppercase text-[#7A746B] block">Direct</span>
-                  <span className="text-xs font-semibold tracking-wider uppercase group-hover:text-[#C5A880]">CALL US</span>
+                <div className="text-left min-w-0">
+                  <span className="text-[9px] sm:text-[10px] tracking-wider uppercase text-[#7A746B] block">Direct</span>
+                  <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase group-hover:text-[#C5A880] truncate block">CALL US</span>
                 </div>
               </a>
 
               <a
                 id="contact-email-btn"
                 href={`mailto:${BRAND.email}?subject=Project%20Enquiry%20-%20OMONY%20Atelier%20Studios`}
-                className="p-4 bg-[#181716] border border-[#2D2B28] hover:border-[#C5A880] text-[#FAF8F5] transition-colors flex items-center space-x-3 group"
+                className="p-3 sm:p-4 bg-[#181716] border border-[#2D2B28] hover:border-[#C5A880] text-[#FAF8F5] transition-colors flex items-center space-x-2.5 sm:space-x-3 group min-w-0"
               >
                 <Mail size={18} className="text-[#C5A880] shrink-0" />
-                <div className="text-left">
-                  <span className="text-[10px] tracking-wider uppercase text-[#7A746B] block">Direct</span>
-                  <span className="text-xs font-semibold tracking-wider uppercase group-hover:text-[#C5A880]">EMAIL US</span>
+                <div className="text-left min-w-0">
+                  <span className="text-[9px] sm:text-[10px] tracking-wider uppercase text-[#7A746B] block">Direct</span>
+                  <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase group-hover:text-[#C5A880] truncate block">EMAIL US</span>
                 </div>
               </a>
 
@@ -104,12 +104,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 href={BRAND.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 bg-[#181716] border border-[#2D2B28] hover:border-[#C5A880] text-[#FAF8F5] transition-colors flex items-center space-x-3 group"
+                className="p-3 sm:p-4 bg-[#181716] border border-[#2D2B28] hover:border-[#C5A880] text-[#FAF8F5] transition-colors flex items-center space-x-2.5 sm:space-x-3 group min-w-0"
               >
                 <Instagram size={18} className="text-[#C5A880] shrink-0" />
-                <div className="text-left">
-                  <span className="text-[10px] tracking-wider uppercase text-[#7A746B] block">Social</span>
-                  <span className="text-xs font-semibold tracking-wider uppercase group-hover:text-[#C5A880]">INSTAGRAM</span>
+                <div className="text-left min-w-0">
+                  <span className="text-[9px] sm:text-[10px] tracking-wider uppercase text-[#7A746B] block">Social</span>
+                  <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase group-hover:text-[#C5A880] truncate block">INSTAGRAM</span>
                 </div>
               </a>
             </div>

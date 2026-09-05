@@ -16,18 +16,18 @@ export const FeaturedWork: React.FC<FeaturedWorkProps> = ({
   const featured = PROJECTS_DATA.slice(0, 4);
 
   return (
-    <section id="featured-work-section" className="py-24 lg:py-32 bg-[#121212] relative">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section id="featured-work-section" className="py-20 lg:py-32 bg-[#121212] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#242220]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-[#242220]">
           <div className="space-y-3">
             <span className="text-xs uppercase tracking-[0.35em] text-[#C5A880] font-semibold block">
               PORTFOLIO ARCHIVE
             </span>
-            <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-[#FAF8F5]">
+            <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-[#FAF8F5] leading-tight break-words">
               Selected Spaces
             </h2>
-            <p className="text-[#9C9488] text-base sm:text-lg font-light max-w-xl">
+            <p className="text-[#9C9488] text-sm sm:text-lg font-light max-w-xl leading-relaxed">
               A selection of interiors shaped by our approach to detail, proportion and timeless design.
             </p>
           </div>
@@ -35,7 +35,7 @@ export const FeaturedWork: React.FC<FeaturedWorkProps> = ({
           <button
             id="featured-work-view-all-top-btn"
             onClick={onViewAllProjects}
-            className="mt-6 md:mt-0 inline-flex items-center space-x-2 text-xs tracking-[0.25em] font-semibold uppercase text-[#C5A880] hover:text-[#FAF8F5] transition-colors group"
+            className="mt-6 md:mt-0 self-start md:self-auto inline-flex items-center space-x-2 text-xs tracking-[0.2em] font-semibold uppercase text-[#C5A880] hover:text-[#FAF8F5] transition-colors group"
           >
             <span>VIEW ALL PROJECTS</span>
             <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
