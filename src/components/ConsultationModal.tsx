@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BRAND } from '../data/content';
 import { ConsultationFormData } from '../types';
-import { X, Send, CheckCircle2, MessageCircle, Phone } from 'lucide-react';
+import { X, Send, CheckCircle2, MessageCircle, Phone, AlertCircle } from 'lucide-react';
 
 interface ConsultationModalProps {
   isOpen: boolean;
@@ -26,16 +26,64 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
 
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+
+    if (!endpoint) {
       setIsSubmitting(false);
-      setSubmitted(true);
-    }, 600);
+      setErrorMessage(
+        'Formspree endpoint URL is not configured. Please define VITE_FORMSPREE_ENDPOINT in your environment (format: https://formspree.io/f/XXXXXXX).'
+      );
+      return;
+    }
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          projectType: formData.projectType,
+          projectLocation: formData.projectLocation,
+          estimatedScope: formData.estimatedScope,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        const errorData = await response.json().catch(() => null);
+        let errorText = 'Unable to schedule consultation. Please verify your details or try again.';
+        if (errorData?.errors && Array.isArray(errorData.errors)) {
+          errorText = errorData.errors
+            .map((item: { field?: string; message?: string }) => item.message || item.field)
+            .filter(Boolean)
+            .join(', ');
+        } else if (errorData?.error) {
+          errorText = errorData.error;
+        }
+        setErrorMessage(errorText);
+      }
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Network connection error';
+      setErrorMessage(`${msg}. Please check your connection and try again.`);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const generateWhatsAppMessage = () => {
@@ -209,6 +257,23 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   className="w-full bg-[#1A1918] border border-[#2D2B28] px-3.5 py-2.5 text-sm text-[#FAF8F5] focus:outline-none focus:border-[#C5A880]"
                 />
               </div>
+
+              {/* Inline Error Message */}
+              {errorMessage && (
+                <div
+                  id="consultation-modal-error"
+                  role="alert"
+                  className="p-3.5 bg-[#231514] border border-[#5C2621] text-[#FAF8F5] flex items-start space-x-3 text-xs leading-relaxed"
+                >
+                  <AlertCircle size={17} className="text-[#EF4444] shrink-0 mt-0.5" />
+                  <div className="flex-1 space-y-0.5">
+                    <span className="font-semibold uppercase tracking-wider text-[#F87171] block text-[11px]">
+                      Submission Notice
+                    </span>
+                    <p className="text-[#D8D2C7] text-xs">{errorMessage}</p>
+                  </div>
+                </div>
+              )}
 
               <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                 <button
