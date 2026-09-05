@@ -1,0 +1,7 @@
+{
+  "name": "OMONY Atelier Studios",
+  "description": "Luxury interior architecture and design studio based in Lagos, Nigeria. Creating timeless interiors tailored to your lifestyle.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
